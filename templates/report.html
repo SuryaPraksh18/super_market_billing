@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Reports</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Transaction Reports</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.id }}</td>
+            <td>{{ transaction.product.name }}</td>
+            <td>{{ transaction.quantity }}</td>
+            <td>{{ transaction.total_price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/admin">Admin</a> | 
+        <a href="/billing">Billing</a>
+    </nav>
+</body>
+</html>
